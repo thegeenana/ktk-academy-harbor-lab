@@ -1,0 +1,22 @@
+{
+  "name": "harbor-learning",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev:api": "node --watch server/index.js",
+    "dev:web": "vite --config app/vite.config.js",
+    "build": "vite build --config app/vite.config.js",
+    "test": "node --test server/*.test.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "pg": "^8.14.0"
+  },
+  "devDependencies": {
+    "vite": "^6.3.0"
+  }
+}
