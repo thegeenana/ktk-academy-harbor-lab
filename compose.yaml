@@ -15,7 +15,11 @@ services:
       timeout: 3s
       retries: 6
   postgres:
-    image: postgres:16
+    # Patch pin: the floating `16` tag moves when a new 16.x release is published.
+    image: postgres:16.15
+    ports:
+      # Host-side `npm run dev:api` connects here. Set HARBOR_POSTGRES_PORT when 5432 is taken.
+      - "${HARBOR_POSTGRES_PORT:-5432}:5432"
     environment:
       POSTGRES_DB: harbor
       POSTGRES_USER: harbor
